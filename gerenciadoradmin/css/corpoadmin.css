@@ -1,0 +1,787 @@
+body{
+    font:12px 'Arial';
+}
+
+#corpo{
+    width: 950px;
+    margin: 0px;    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#externo{
+    display: table;
+}
+
+.bordaBox {
+    background-color: transparent;
+    width: auto;
+}
+
+.bordaBox .b1, .bordaBox .b2, .bordaBox .b3, .bordaBox .b4, .bordaBox .b1b, .bordaBox .b2b, .bordaBox .b3b, .bordaBox .b4b {
+    display: block;
+    overflow: hidden;
+    font-size: 1px;
+}
+
+.bordaBox .b1, .bordaBox .b2, .bordaBox .b3, .bordaBox .b1b, .bordaBox .b2b, .bordaBox .b3b {
+    height: 1px;
+}
+
+.bordaBox .b2, .bordaBox .b3, .bordaBox .b4 {
+    background: #fff;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+}
+
+.bordaBox .b1 {
+    margin: 0 5px;
+    background: #CECECE;
+}
+
+.bordaBox .b2 {
+    margin: 0 3px;
+    border-width: 0 2px;
+}
+
+.bordaBox .b3 {
+    margin: 0 2px;
+}
+
+.bordaBox .b4 {
+    height: 2px;
+    margin: 0 1px;
+}
+AQUI
+.bordaBox .b12, .bordaBox .b22, .bordaBox .b32, .bordaBox .b42, .bordaBox .b1b2, .bordaBox .b2b2, .bordaBox .b3b2, .bordaBox .b4b2 {
+    display: block;
+    overflow: hidden;
+    font-size: 1px;
+}
+
+.bordaBox .b12, .bordaBox .b22, .bordaBox .b32, .bordaBox .b1b2, .bordaBox .b2b2, .bordaBox .b3b2 {
+    height: 1px;
+}
+
+.bordaBox .b22, .bordaBox .b32, .bordaBox .b42 {
+    background: #B0C4DE;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+}
+
+.bordaBox .b12 {
+    margin: 0 5px;
+    background: #ccc;
+}
+
+.bordaBox .b22 {
+    margin: 0 3px;
+    border-width: 0 2px;
+}
+
+.bordaBox .b32 {
+    margin: 0 2px;
+}
+
+.bordaBox .b42 {
+    height: 2px;
+    margin: 0 1px;
+}
+
+.bordaBox .titulos{
+    width: auto;
+    padding: 5px;
+    display: block; 
+    color: #999;
+    background: #B0C4DE;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+}
+
+.bordaBox .corpo {
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+}
+
+.bordaBox .login {
+    padding: 5px;
+    display: block;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    margin-left: auto;
+    margin-right: auto;
+    background: #B0C4DE;
+}
+
+#log{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+.bordaBox .interno{
+    padding: 5px;
+    height: auto;
+    display: block;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    width: 100px;
+    background: #B0C4DE;
+}
+
+.bordaBox .interno1{
+    padding: 5px;
+    display: block;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    width: 790px;
+    background: #4682B4;
+    color: #fff;
+}
+
+.bordaBox .interno2{
+    padding: 5px;
+    display: block;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    width: 790px;
+    background: #fff;
+}
+
+.l{
+    float: left;
+    margin-left: 5px;
+}
+
+.r{
+    float: left;
+    margin-left: 15px;
+}
+
+.d{
+    float: left;
+    margin-top: 10px;
+}
+
+.d2Cat{
+    float: left;
+    height: 275px;
+    margin-left: 5px;
+    margin-top:10px;    
+    background-color: #fff;    
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/ 
+}
+
+.d2Sub{
+    float: left;
+    height: 300px;
+    margin-left: 5px;
+    margin-top:10px;    
+    background-color: #fff;    
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/ 
+}
+
+.d2Login{
+    float: left;
+    width: 320px;
+    height: 190px;
+    margin-left: 5px;
+    margin-top:10px;    
+    background-color: #fff;    
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/ 
+}
+
+.d2Prod{
+    float: left;
+    height: 570px;
+    margin-left: 5px;
+    margin-top:10px;    
+    background-color: #fff;    
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/ 
+}
+
+.d2Not{
+    float: left;
+    height: 570px;
+    margin-top:10px;    
+    background-color: #fff;    
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/ 
+}
+
+.d2Serv{
+    float: left;
+    height: 510px;
+    margin-left: 5px;
+    margin-top:10px;    
+    background-color: #fff;    
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/ 
+}
+
+.menu{
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.menu:hover{
+    opacity: .60;
+    -moz-opacity: .60;
+    filter:alpha(opacity=60);
+}
+
+#listaCategorias{
+    width: 305px;
+    height: 245px;
+    margin-left: 2px;
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/
+}
+
+#listaSubCategorias{
+    width: 305px;
+    height: 265px;
+    margin-left: 2px;
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/
+}
+
+#categoria{
+    width: 285px;
+    height: 25px;
+    display: block;
+    border: 1px solid #999;
+    margin-bottom: 2px;
+    margin-left: 1px;
+}
+
+#categoria:hover{
+    background: #eee;
+}
+
+#produto{
+    width: 331px;
+    height: 25px;
+    display: block;
+    border: 1px solid #999;
+    margin-bottom: 2px;
+    margin-left: 1px;
+}
+
+#produto:hover{
+    background: #eee;
+}
+
+#noticia{
+    width: auto;
+    height: 25px;
+    display: block;
+    border: 1px solid #999;
+    margin-bottom: 2px;
+    margin-left: 1px;
+}
+
+#noticia:hover{
+    background: #eee;
+}
+
+#produtoIndex{
+    width: auto;
+    height: 25px;
+    display: block;
+    border: 1px solid #999;
+    margin-bottom: 2px;
+    margin-left: 1px;
+}
+
+#produtoIndex:hover{
+    background: #eee;
+}
+
+#topo{
+    width: auto;
+    background: #4682B4;
+    color: #fff;
+    height: 25px;
+    display: block;
+    border: 1px solid #999;
+    margin-bottom: 2px;
+    margin-left: 1px;
+}
+
+.imgCategoria{
+    width: 31px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.nameAdmin{
+    width: 126px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.loginAdmin{
+    width: 69px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.psswdAdmin{
+    width: 69px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.optAdmin{
+    width: 22px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+}
+
+.tituloCategoria{
+    width: 177px;
+    height: 25px;
+    float: left;
+    font-weight:bold;
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.imgProduto{
+    width: 28px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.tituloProduto{
+    width: 175px;
+    height: 25px;
+    float: left;
+    font-weight:bold;
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.tituloProdutoIndex{
+    width: 105px;
+    height: 25px;
+    float: left;    
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.tituloSubCategoria{
+    width: 95px;
+    height: 25px;
+    float: left;    
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.tituloCategoriaIndex{
+    width: 95px;
+    height: 25px;
+    float: left;    
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.tpCat{
+    width: 28px;
+    height: 25px;
+    float: left;
+    font-weight:bold;
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.tpSub{
+    width: 28px;
+    height: 25px;
+    float: left;
+    font-weight:bold;
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.tSubCategoria{
+    width: 78px;
+    height: 25px;
+    float: left;
+    font-weight:bold;
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;    
+}
+
+.statusCategoria{
+    width: 49px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.statusProduto{
+    width: 48px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.opcoesProduto{
+    width: 80px;
+    height: 25px;
+    float: left;
+    font-weight:bold;
+    font-size: 10px;
+    text-align: center;
+}
+
+.opcoesProdutos{
+    width: 70px;
+    height: 25px;
+    float: left;
+    font-weight:bold;
+    font-size: 10px;
+    text-align: center;
+}
+
+.opcoesCategoria{
+    width: 24px;
+    height: 25px;
+    float: left;
+    font-weight:bold;
+    font-size: 10px;
+    text-align: center;
+}
+
+#listaProdutos{
+    width:360px;
+    height: auto;
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/    
+}
+
+#listaNoticias{
+    width:380px;
+    height: auto;
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/    
+}
+
+#imgProdutos{
+    display:block;
+}
+
+.browserImagens{
+    float:left;
+    width: 290px;
+    height: 520px;
+    background: #fff;
+    margin-right: 10px;
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px; /*esse serve o firefox*/
+    border-radius:10px; /*esse para chrome, safari, opera*/
+}
+
+.listaImagensProdutos{
+    float: right;
+    width: 368px;
+    height: 520px;
+    background: #fff;
+    overflow: auto;
+    position: relative;
+    -moz-border-radius:10px;
+    border-radius:10px;     
+}
+
+#imgP{
+opacity: 0.9; 
+-moz-opacity: 0.9;
+filter: alpha(Opacity=90)
+}
+
+#imgP:hover {
+opacity: 1.0; 
+-moz-opacity: 1.0;
+filter: alpha(Opacity=100)
+}
+
+#imgSalvar{
+opacity: 0.8; 
+-moz-opacity: 0.8;
+filter: alpha(Opacity=80)
+}
+
+#imgSalvar:hover {
+opacity: 1.0; 
+-moz-opacity: 1.0;
+filter: alpha(Opacity=100)
+}
+
+.responderOrç{
+    float: left;    
+    width: 340px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.orcamentos{
+    float:left;
+    width: 390px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+}
+
+#listaOrcamentos{
+    width: 390px;
+    height: 500px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+}
+
+.dataOrç{
+    width: 55px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.nameUserOrç{
+    width: 105px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.assuntoUserOrç{
+    width: 145px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.statusOrç{
+    width: 59px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.optOrç{
+    width: 10px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+}
+
+#orcamento{
+    width: 388px;
+    height: 25px;
+    display: block;
+    border: 1px solid #999;
+    margin-bottom: 2px;
+}
+
+#orcamento:hover{
+    background: #eee;
+}
+
+.dataOrçList{
+    width: 56px;
+    height: 25px;
+    float: left;
+    color: #222;
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.nameUserOrçlist{
+    width: 105px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.assuntoUserOrçList{
+    width: 145px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.statusOrçlist{
+    width: 59px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.optOrçList{
+    width: 10px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+}
+
+/** 360px*/
+
+.tituloNot{
+    width: 172px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.dataInicial{
+    width: 55px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.dataFinal{
+    width: 55px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.statusNot{
+    width: 40px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+    border-right: 1px solid #999;
+}
+
+.optNot{
+    width: 50px;
+    height: 25px;
+    float: left;
+    font-size: 10px;
+    font-weight:bold;
+    text-align: center;
+}
+
+#imgsBanner{
+    background:#fff;
+    width:700px;
+    margin-left:auto;
+    margin-right:auto;
+    -moz-border-radius:15px;
+    border-radius:15px;
+}

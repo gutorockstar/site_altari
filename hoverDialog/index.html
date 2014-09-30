@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hover Animado com jQuery</title>
+<link href="estilo.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jqueryHover.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".menu a").hover(function(){
+		$(this).next("em").animate({opacity: "show", top: "-75"}, "slow");
+	}, 
+	function(){
+		$(this).next("em").animate({opacity: "hide", top: "-85"}, "fast");
+	});
+});
+</script>
+</head>
+
+<body>
+<ul class="menu">
+  <li> <a href="http://www.lucaspeperaio.com.br/blog">Blog Pessoal</a><em>Tecnologia, Internet e tutoriais diversos sobre web</em> </li>
+  <li> <a href="http://www.lucaspeperaio.com.br/blog/sobre">Sobre o autor</a><em>Meus hobbies e um pouco sobre a minha vida!</em> </li>
+  <li> <a href="http://www.lucaspeperaio.com.br/blog/feed">Assine o meu Feed</a><em>Essa é a única maneira de se manter ligado no meu site!</em> </li>
+</ul>
+</body>
+</html>

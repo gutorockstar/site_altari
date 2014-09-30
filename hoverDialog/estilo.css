@@ -1,0 +1,26 @@
+.menuHover {
+	padding: 0;
+	list-style: none;
+}
+.menuHover li {
+	padding: 0;
+	margin: 0 2px;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+
+.menuHover li em {
+	background: url(imagens/hover.png) no-repeat;
+	width: 180px;
+	height: 45px;
+	position: absolute;
+	color: #222;
+	top: -85px;
+	left: -15px;
+	text-align: center;
+	padding: 20px 12px 10px;
+	font-style: normal;
+	z-index: 2;
+	display: none;
+}

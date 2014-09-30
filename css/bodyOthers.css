@@ -1,0 +1,14 @@
+body{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family:'Trebuchet MS', Arial;
+    font-size: 11px;
+    /**
+    background-image: url(../images/background.jpg);
+    background-repeat: repeat-x;
+    background-color: #fff;
+    height: 100%;
+    */
+    background: #eee;
+}

@@ -1,0 +1,473 @@
+.tdLabel{
+    width: 100px;
+}
+
+#login{
+    border: 1px solid #4682B4;
+    width: 135px;
+    height: 25px;
+    text-align: center;
+    
+    background:#eee;
+    
+    
+}
+
+#login:hover{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#login:focus{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#loginReg{
+    border: 1px solid #4682B4;
+    width: 135px;
+    height: 25px;
+    text-align: center;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    
+    background:#eee;
+}
+
+#loginReg:hover{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#loginReg:focus{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#login1{
+    border: 1px solid #4682B4;
+    width: 135px;
+    height: 25px;
+    text-align: center;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    background:#eee;
+    
+}
+
+#login1:hover{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#login1:focus{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#passwd {
+    border: 1px solid #4682B4;
+    width: 135px;
+    height: 25px;
+    text-align: center;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    background:#eee;
+    
+}
+
+#passwd:hover{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#passwd:focus{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#senha {
+    border: 1px solid #4682B4;
+    width: 135px;
+    height: 25px;
+    text-align: center;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    
+    background:#eee;
+}
+
+#senha:hover{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#senha:focus{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#senha1 {
+    border: 1px solid #4682B4;
+    width: 135px;
+    height: 25px;
+    text-align: center;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    
+    background:#eee;
+}
+
+#senha1:hover{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#senha1:focus{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#logar{
+    width: 70px;
+    height: 30px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}
+
+#logarProd{
+    width: 70px;
+    height: 30px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}
+
+
+
+#logarUser{
+    width: 95px;
+    height: 30px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}
+
+#cancelProd{
+    width: 70px;
+    height: 30px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}
+
+#cancel{
+    width: 70px;
+    height: 30px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}
+
+#text{
+    border: 1px solid #4682B4;
+    width: 235px;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    
+    
+    background:#eee;
+}
+
+.textDisabled{
+    border: 1px solid #999;
+    width: 235px;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    
+    
+    background:#ddd;
+}
+
+.text{
+    border: 1px solid #4682B4;
+    width: 235px;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    
+    
+    background:#eee;
+}
+
+.text:hover{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+.text:focus{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#text:hover{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#text:focus{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#email{
+    border: 1px solid #4682B4;
+    width: 235px;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    
+    
+    background:#eee;
+}
+
+#email:hover{
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+    border: 1px solid orange;
+}
+
+#email:focus{
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+    border: 1px solid orange;
+}
+
+#fone{
+    border: 1px solid #4682B4;
+    width: 235px;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+    
+    
+    background:#eee;
+}
+
+#fone:hover{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#fone:focus{
+    border: 1px solid orange;
+    -moz-box-shadow: 0px 1px 10px orange;
+    -webkit-box-shadow: 0px 1px 10px orange;
+    background:#eee;
+}
+
+#fileOculto{
+    right: 0;
+    z-index: 2;
+    font-size: 0px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+#file{
+    font-family: Tahoma;
+    width: 161px;
+    height: 22px;
+     /*esse serve o firefox*/
+    
+}
+
+#procurar{
+    border:0px solid #4682B4;
+    width: 70px;
+    height: 22px;
+     /*esse serve o firefox*/
+    
+}
+
+#procurar:hover{
+    border: 1px solid orange;
+}
+
+#procurar:focus{
+    border: 1px solid orange;
+}
+
+#descri{
+    border: 1px solid #4682B4;
+    width: 235px;
+    height: 150px;
+    background:#eee;
+}
+
+#descri:hover{
+    border: 1px solid orange;
+}
+
+#descri:focus{
+    border: 1px solid orange;
+}
+
+#checkCategorias{
+    border: 1px solid #4682B4;
+    width: 235px;
+    height: 22px;
+    background: #fff;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/    
+}
+
+#checkCategorias:hover{
+    border: 1px solid orange;
+}
+
+#checkCategorias:focus{
+    border: 1px solid orange;
+}
+
+#categ{
+    border: 1px solid #4682B4;
+    width: 235px;
+    height: 22px;
+    background: #fff;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/    
+}
+
+#categ:hover{
+    border: 1px solid orange;
+}
+
+#categ:focus{
+    border: 1px solid orange;
+}
+
+#subcateg{
+    border: 1px solid #4682B4;
+    width: 235px;
+    height: 22px;
+    background: #fff;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/    
+}
+
+#subcateg:hover{
+    border: 1px solid orange;
+}
+
+#subcateg:focus{
+    border: 1px solid orange;
+}
+
+#obrigatory{
+    color: red;
+}
+
+#obrigatoryProd{
+    color: red;
+}
+
+#editor{
+    margin-left: 5px;
+}
+
+#emailPara{
+    border: 1px solid #4682B4;
+    width: 260px;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}
+
+#emailPara:hover{
+    border: 1px solid orange;
+}
+
+#emailPara:focus{
+    border: 1px solid orange;
+}
+
+#cc{
+    border: 1px solid #4682B4;
+    width: 260px;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}
+
+#cc:hover{
+    border: 1px solid orange;
+}
+
+#cc:focus{
+    border: 1px solid orange     
+}
+
+#assunto{
+    border: 1px solid #4682B4;
+    width: 260px;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}
+
+#assunto:hover{
+    border: 1px solid orange;
+}
+
+#assunto:focus{
+    border: 1px solid orange;
+}
+
+#f_date_c1{
+    border: 1px solid #4682B4;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}
+
+#f_date_c2{
+    border: 1px solid #4682B4;
+    height: 22px;
+     /*esse serve o firefox*/
+     /*esse para chrome, safari, opera*/
+}

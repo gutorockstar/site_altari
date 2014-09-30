@@ -1,0 +1,166 @@
+body{
+    font:14px 'Arial';
+}
+
+#login{
+    border:1px solid #4682B4;
+    width: 135px;
+    height: 25px;
+    text-align: center;
+    
+    
+}
+
+#login:hover{
+    border: 1px solid orange;
+    background:#eee;
+}
+
+#login:focus{
+    border: 1px solid orange;
+    background:#eee
+}
+
+#passwd {
+    border:1px solid #4682B4;
+    width: 135px;
+    height: 25px;
+    text-align: center;
+    
+    
+}
+
+#passwd:hover{
+    border: 1px solid orange;
+    background:#eee;
+}
+
+#passwd:focus{
+    border: 1px solid orange;
+    background:#eee
+}
+
+#logar{
+    width: 70px;
+    height: 30px;
+    
+    
+}
+
+#salvarProd{
+    width: 70px;
+    height: 30px;
+    
+    
+}
+
+#cancelProd{
+    width: 70px;
+    height: 30px;
+    
+    
+}
+
+#cancel{
+    width: 70px;
+    height: 30px;
+    
+    
+}
+
+#text{
+    border:1px solid #999;
+    width: 235px;
+    height: 22px;
+    
+    
+}
+
+#fileOculto{
+    right: 0;
+    z-index: 2;
+    font-size: 0px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+#file{
+    font-family: Tahoma;
+    width: 161px;
+    height: 22px;
+    
+    
+}
+
+#procurar{
+    border:0px solid #999;
+    width: 70px;
+    height: 22px;
+    
+    
+}
+
+#descri{
+    border:1px solid #999;
+    width: 235px;
+    height: 150px;
+    
+    
+}
+
+#checkCategorias{
+    border:1px solid #4682B4;
+    width: 235px;
+    height: 22px;
+    background: #fff;
+    
+        
+}
+
+#checkCategorias:hover{
+    border: 1px solid orange;
+}
+
+#checkCategorias:focus{
+    border: 1px solid orange;
+}
+
+#categ{
+    border:1px solid #4682B4;
+    width: 235px;
+    height: 22px;
+    background: #fff;
+    
+        
+}
+
+#categ:hover{
+    border: 1px solid orange;
+}
+
+#categ:focus{
+    border: 1px solid orange;
+}
+
+#subcateg{
+    border:1px solid #999;
+    width: 235px;
+    height: 22px;
+    
+        
+}
+
+#obrigatory{
+    color: #999;
+}
+
+#obrigatoryProd{
+    color: red;
+}
+
+#editor{
+    opacity: .70;
+    -moz-opacity: .70;
+    filter:alpha(opacity=70);
+    margin-left: 5px;
+}
