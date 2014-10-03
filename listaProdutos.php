@@ -19,66 +19,63 @@ $_SESSION['login'] = $login;
 
 if( $action == 'enviar' )
 {   
-    $mensagem = $_GET['msg'];
-    $msg = "<p>$mensagem</p>";
-    
-    $prod = new produto();        
-    
-    $cont = $user->getAllIdsProdUser($login);    
-    $x    = 0;
-        
-    $cabecalho = "";
-    if( $cont[$x] != 'end' )
+    try
     {
-        $cabecalho = "<p><strong>Produtos selecionados pelo usuário:</strong></p>";
-    }
-    
-    $produtos  = "";
-    while( $cont[$x] != 'end' )
-    {
-        $dadosProduto = $prod->getProduto($cont[$x]);
-        
-        $titulo    = $dadosProduto[3]; // titulo do produto
-        
-        $produtos .= "- " . $titulo . "<br>";
-        $x++;
-    }
-    
-    $allMessage = $msg . $cabecalho . $produtos;
-    $email = new email($allMessage, 'Requisição de orçamento');
-    $email->getEmailUser($login);
-    
-    $emails = $email->getEmailsFromAdmins();
-    $x = 0;
-    
-    $enviado = true;
-    while( $emails[$x] != 'end' )
-    {        
-        $email->__set('para', $emails[$x]);
-        $email->getEmailUser($login);
-        $email->getNameUser($login);
-        
-        if( !$email->enviar() )
+        // Obtém os dados do usuário para serem enviados para o email.
+        $dadosUsuario = $user->montarDadosDoUsuarioParaEmail($login);
+
+        $mensagem = $_GET['msg'];
+        $msg = "<p>$mensagem</p>";
+
+        $prod = new produto();
+        $cont = $user->getAllIdsProdUser($login);    
+        $x    = 0;
+
+        $cabecalho = "";
+        if( $cont[$x] != 'end' )
         {
-            $enviado = false;
+            $cabecalho = "<p><strong>Produtos selecionados pelo usuário:</strong></p>";
         }
-        $x++;
+
+        $produtos  = "";
+        while( $cont[$x] != 'end' )
+        {
+            $dadosProduto = $prod->getProduto($cont[$x]);
+            $titulo    = $dadosProduto[3]; // titulo do produto
+            $produtos .= "- " . $titulo . "<br>";
+            $x++;
+        }
+
+        $allMessage = $dadosUsuario . $msg . $cabecalho . $produtos;
+        $email = new email($allMessage, 'Requisição de orçamento');
+        $email->__set('de', $email->getEmailUser($login));
+
+        $emails  = $email->getEmailsFromAdmins();
+        $enviado = false;
+
+        foreach ( $emails as $to )
+        {
+            $email->__set('para', $to);
+            $enviado = $email->enviar();
+        }
+
+        if( $enviado )
+        {
+            $email->salvarOrcamento();
+            $user->deleteAllProd($login);        
+            echo "<script>alert('Orçamento enviado com sucesso, retornaremos em breve');</script>";
+        }
+        else
+        {
+            throw new Exception("Problema ao enviar orçamento!");
+        }
     }
-    
-    if( $enviado )
+    catch ( Exception $err )
     {
-        $email->salvarOrcamento();
-        $user->deleteAllProd($login);        
-        echo "<script>alert('Orçamento enviado com sucesso, retornaremos em breve');</script>";
-        $email->emailReturn();
-    }
-    else
-    {
-        echo "<script>alert('Problema ao enviar orçamento');</script>";
+        echo "<script>alert('{$err->getMessage()}');</script>";
     }
     
 }
-
 
 if( $prim != 'true' )
 {

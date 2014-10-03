@@ -10,7 +10,11 @@ if( $session == null )
     $userSession = new session();
     $session = $userSession->__get('session');
     session_start($session);
-    $_SESSION['login'] = null;
+}
+
+if ( $_REQUEST['action'] == 'logout' )
+{
+    session_destroy('secao');
 }
 
 $_SESSION['secao'] = $session;
@@ -111,7 +115,7 @@ $_SESSION['secao'] = $session;
                                 echo "<table width=\"auto\" style=\"float:right;font-family:'Trebuchet MS', Arial;font-size:11px;\">
                                         <form id='formLog' name='formLog'>
                                             <tr>
-                                                <td><b style=\"color:#999;float:right;\">Olá</b></td><td><b style='color:blue;'>{$nome[0]}</b><b style=\"color:#999;\"> !</b></td><td><a id='loginUser' href='javascript:void(0);' onClick='formLog.submit();'>Logout</a></td>
+                                                <td><b style=\"color:#999;float:right;\">Olá</b></td><td><b style='color:blue;'>{$nome[0]}</b><b style=\"color:#999;\"> !</b></td><td><a id='loginUser' href='javascript:void(0);' onClick=\"window.location.href=window.location.href+'action=logout'\">Logout</a></td>
                                             </tr>
                                         </form>
                                     </table>";

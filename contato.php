@@ -46,28 +46,57 @@
 <?php
 include('classes/config.php');
 include('classes/email.php');
-
-$config = new config();
+include('classes/users.php');
 
 $action = $_GET['action'];
 
 if( $action == 'enviar' )
 {
-    $nome   = $_POST['nome'];
-    $email  = $_POST['email'];
-    $fone   = $_POST['fone'];
-    $cidade = $_POST['cidade'];
-    $msg    = $_POST['msg'];
-    
-    if( ($nome != null) && ($email != null) && ($msg != null) && ($cidade != null) )
+    try
     {
-        $email = new email($msg, 'Contato do site', $email, null, $nome, false, null, null, true);
-        $email->salvarContato(null, $nome, $email, $fone, $msg);
-        echo "<script>alert('Mensagem enviada com sucesso.');</script>";
+        $config = new config();
+        
+        $dataUser = new stdClass();
+        $dataUser->nome   = $_POST['nome'];
+        $dataUser->email  = $_POST['email'];
+        $dataUser->fone   = $_POST['fone'];
+        $dataUser->cidade = $_POST['cidade'];
+        $dataUser->cpf    = $_POST['cpf'];
+        $dataUser->cnpj   = $_POST['cnpj'];
+
+        $dadosUsuario = users::montarDadosDoUsuarioParaEmail(null, $dataUser);
+        $dataUser->msg = $dadosUsuario . $_POST['msg'];
+
+        if( ($dataUser->nome != null) && ($dataUser->email != null) && ($dataUser->msg != null) && ($dataUser->cidade != null) && (($dataUser->cpf != null) || ($dataUser->cnpj != null)) )
+        {
+            $email   = new email($dataUser->msg, "Contato do site", $dataUser->email);
+            $emails  = $email->getEmailsFromAdmins();
+            $enviado = false;
+
+            foreach ( $emails as $para )
+            {
+                $email->__set('para', $para);
+                $enviado = $email->enviar();
+            }
+
+            if ( $enviado )
+            {
+                $email->salvarContato(null, $dataUser->nome, $dataUser->email, $dataUser->fone, $dataUser->msg);
+                echo "<script>alert('Mensagem enviada com sucesso.');</script>";
+            }
+            else
+            {
+                throw new Exception("Ops! Ocorreu algum problema ao enviar o e-mail...");
+            }
+        }
+        else
+        {
+            throw new Exception("Preencha os campos requeridos!");
+        }
     }
-    else
+    catch ( Exception $err )
     {
-        echo "<script>alert('Preencha os campos requeridos!');</script>";
+        echo "<script>alert('{$err->getMessage()}');</script>";
     }
 }
 ?>

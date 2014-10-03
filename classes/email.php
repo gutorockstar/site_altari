@@ -12,10 +12,34 @@
  */
 class email 
 {
+    /**
+     * To
+     * 
+     * @var type 
+     */
     private $para;
+    
+    /**
+     * From
+     * 
+     * @var type 
+     */
     private $de;
+    
+    /**
+     * Message
+     * 
+     * @var type 
+     */
     private $mensagem;
+    
+    /**
+     * Subject
+     * 
+     * @var type 
+     */
     private $assunto;
+    
     private $nome;
     
     
@@ -145,7 +169,6 @@ class email
         {
             $emails[] = $dados["email"];
         }
-        $emails[] = 'end';
         
         return $emails;
         
@@ -156,26 +179,15 @@ class email
     }
     
     function sendMail($para, $de, $mensagem, $assunto)
-    {
-        $recebenome = $this->__get('nome');
-        $recebemail = $de;
+    {               
+        var_dump($para);
+        var_dump($assunto);
+        var_dump($mensagem);
+        var_dump($this->prepareHeadersEmail($para, $de));
         
-        $headers = "From: ".$de."\r\n"."Content-type:text/html; charset=utf-8"; 
-
-        $msg   .= "<h3>De:</h3> ";
-        $msg  .= $recebenome;
-        $msg  .= "<h3>E-mail</h3>";
-        $msg  .= $recebemail;
-        $msg  .= "<h3>Assunto:</h3>";
-        $msg  .= $assunto;
-        $msg  .= "<h3>Mensagem</h3>";
-        $msg  .= "<p>";
-        $msg  .= $mensagem;
-        $msg  .= "</p>";
+        $enviado = mail($para, $assunto, $mensagem, $this->prepareHeadersEmail($para, $de));
         
-        $envia = mail($para, $assunto, $mensagem, $headers);
-        
-        if( $envia )
+        if( $enviado )
         {            
             return true;
         }
@@ -183,34 +195,29 @@ class email
         {
             return false;
         }
-        
-        /**
-         * Envia email 
-         */
     }
     
-    public function emailReturn()
+    private function prepareHeadersEmail($to, $from)
     {
-        $recebenome = $this->__get('nome');
-        $de         = $this->__get('para'); // Na verdade será o de
-        $recebemail = $this->__get('de'); // Na verdade será o para.
-        
-        $headers = "From: ".$de."\r\n"."Content-type:text/html; charset=utf-8";
-        
-        $mensagem2  = "<p>Olá <strong>" . $recebenome . "</strong>. Agradeçemos sua visita e a oportunidade de recebermos o seu contato. Em até 48 horas você receberá no e-mail fornecido a resposta para sua questão.</p>";
-        $mensagem2 .= "<p>Observação - Não é necessário responder esta mensagem.</p>";
-        $mensagem2 .= "<p><strong>www.altari.com.br</strong></p>";
-            
-        $envia = mail($recebemail, "Sua mensagem foi recebida!", $mensagem2, $headers);
-        
-        if( $envia )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        $bcc = null; // Esconder endereços de e-mails.
+        $cc = null; // Qualquer destinatário pode ver os endereços de e-mail especificados nos campos To e Cc.
+
+        $headers = sprintf( 'Date: %s%s', date( "D, d M Y H:i:s O" ), PHP_EOL );
+        $headers .= sprintf( 'Return-Path: %s%s', $from, PHP_EOL );
+        $headers .= sprintf( 'To: %s%s', $to, PHP_EOL );
+        $headers .= sprintf( 'Cc: %s%s', $cc, PHP_EOL );
+        $headers .= sprintf( 'Bcc: %s%s', $bcc, PHP_EOL );
+        $headers .= sprintf( 'From: %s%s', $from, PHP_EOL );
+        $headers .= sprintf( 'Reply-To: %s%s', $from, PHP_EOL );
+        $headers .= sprintf( 'Message-ID: <%s@%s>%s', md5( uniqid( rand( ), true ) ), $_SERVER[ 'HTTP_HOST' ], PHP_EOL );
+        $headers .= sprintf( 'X-Priority: %d%s', 3, PHP_EOL );
+        $headers .= sprintf( 'X-Mailer: PHP/%s%s', phpversion( ), PHP_EOL );
+        $headers .= sprintf( 'Disposition-Notification-To: %s%s', $from, PHP_EOL );
+        $headers .= sprintf( 'MIME-Version: 1.0%s', PHP_EOL );
+        $headers .= sprintf( 'Content-Transfer-Encoding: 8bit%s', PHP_EOL );
+        $headers .= sprintf( 'Content-Type: text/html; charset="utf-8"%s', PHP_EOL );
+
+        return $headers;
     }
     
     public function salvarOrcamento($data='', $nomeUser='', $de='', $fone='', $mensagem='')
@@ -260,7 +267,6 @@ class email
     public function salvarContato($data=null, $nome=null, $de=null, $fone=null, $mensagem=null)
     {
         include('data.php');
-        include('users.php');
         
         $de       = $this->__get('de'); //Email
         $mensagem = $this->__get('mensagem'); //Mensagem

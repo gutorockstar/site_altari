@@ -517,6 +517,66 @@ class users
          */
     }
     
+    public static function montarDadosDoUsuarioParaEmail($login = null, $dataUser = null)
+    {
+        if ( is_null($dataUser) )
+        {
+            $dataUser = self::getDataUserByLogin($login);
+        }
+        
+        $dadosEmail = "<strong>Nome: </strong>{$dataUser->nome}<br>";
+        $dadosEmail .= "<strong>Cidade: </strong>{$dataUser->cidade}<br>";
+        $dadosEmail .= "<strong>E-mail: </strong>{$dataUser->email}<br>";
+        
+        if ( strlen($dataUser->cpf) > 0 )
+        {
+            $dadosEmail .= "<strong>CPF: </strong>{$dataUser->cpf}<br>";
+        }
+        else if ( strlen($dataUser->cnpj) > 0 )
+        {
+            $dadosEmail .= "<strong>CNPJ: </strong>{$dataUser->cnpj}<br>";
+        }
+        
+        return $dadosEmail . "<br>";
+    }
+    
+    public static function getDataUserByLogin($login)
+    {
+        $sql = "SELECT id_user,
+                       nome,
+                       email,
+                       telefone,
+                       cidade,
+                       tipoPessoa,
+                       cpf,
+                       cnpj,
+                       login,
+                       senha
+                  FROM userLogin
+                 WHERE login='{$login}'";
+                 
+        $busca     = mysql_query($sql)or die(mysql_error());
+        $loginData = new stdClass();
+        
+        while ( $dados = mysql_fetch_array($busca) )
+        {
+            $loginData->id_user    = $dados["id_user"];
+            $loginData->nome       = $dados["nome"];
+            $loginData->email      = $dados["email"];
+            $loginData->telefone   = $dados["telefone"];
+            $loginData->cidade     = $dados["cidade"];
+            $loginData->tipoPessoa = $dados["tipoPessoa"];
+            $loginData->cpf        = $dados["cpf"];
+            $loginData->cnpj       = $dados["cnpj"];
+            $loginData->login      = $dados["login"];
+            $loginData->senha      = $dados["senha"];
+            
+            break;
+        }
+            
+        return $loginData;
+    }
+    
 }
 
 ?>
