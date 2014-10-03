@@ -12,19 +12,30 @@
  */
 class users 
 {
+    const TIPO_PESSOA_FISICA = 'f';
+    const TIPO_PESSOA_JURIDICA = 'j';
+    
     private $nome;
     private $email;
     private $fone;
+    private $cidade;
+    private $tipoPessoa;
+    private $cpf;
+    private $cnpj;
     private $login;
     private $senha;
     
-    public function __construct($nome=null, $email=null, $fone=null, $login=null, $senha=null)
+    public function __construct($nome=null, $email=null, $fone=null, $login=null, $senha=null, $cidade=null, $tipoPessoa=self::TIPO_PESSOA_FISICA, $cpf=null, $cnpj=null)
     {
         if( $nome != null )
         {
             $this->__set('nome', $nome);
             $this->__set('email', $email);
             $this->__set('fone', $fone);
+            $this->__set('cidade', $cidade);
+            $this->__set('tipoPessoa', $tipoPessoa);
+            $this->__set('cpf', $cpf);
+            $this->__set('cnpj', $cnpj);
             $this->__set('login', $login);
             $this->__set('senha', $senha);
         }
@@ -58,10 +69,21 @@ class users
     public function verificarUser()
     {
         $login = $this->__get('login');
+        $cpf   = $this->__get('cpf');
+        $cnpj  = $this->__get('cnpj');
         
         $sql = "SELECT login
                   FROM userLogin
-                 WHERE login='$login'";
+                 WHERE login = '{$login}'";
+                 
+        if ( strlen($cpf) > 0 )
+        {
+            $sql .= " OR cpf = '{$cpf}'";
+        }
+        else if ( strlen($cnpj) > 0 )
+        {
+            $sql .= " OR cnpj = '{$cnpj}'";
+        }
         
         $busca = mysql_query($sql)or die(mysql_error());
         $result = mysql_fetch_array($busca);
@@ -84,24 +106,36 @@ class users
     
     public function salvarUser()
     {
-        $nome  = $this->__get('nome');
-        $email = $this->__get('email');
-        $fone  = $this->__get('fone');
-        $login = $this->__get('login');
-        $senha = $this->__get('senha');
+        $nome        = $this->__get('nome');
+        $email       = $this->__get('email');
+        $fone        = $this->__get('fone');
+        $cidade      = $this->__get('cidade');
+        $tipoPessoa  = $this->__get('tipoPessoa');
+        $cpf         = $this->__get('cpf');
+        $cnpj        = $this->__get('cnpj');
+        $login       = $this->__get('login');
+        $senha       = $this->__get('senha');
         
         $sql = "INSERT INTO userLogin
                                 ( nome,
                                   email,
                                   telefone,
+                                  cidade,
+                                  tipoPessoa,
+                                  cpf,
+                                  cnpj,
                                   login,
                                   senha )
                                VALUES
-                                ( '$nome',
-                                  '$email',
-                                  '$fone',
-                                  '$login',
-                                  '$senha' )";
+                                ( '{$nome}',
+                                  '{$email}',
+                                  '{$fone}',
+                                  '{$cidade}',
+                                  '{$tipoPessoa}',
+                                  '{$cpf}',
+                                  '{$cnpj}',
+                                  '{$login}',
+                                  '{$senha}' )";
         mysql_query($sql)or die(mysql_error());
         $this->createTempTable($login);
         

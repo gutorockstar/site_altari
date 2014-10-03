@@ -53,7 +53,7 @@ if( $action == 'enviar' )
     
     $enviado = true;
     while( $emails[$x] != 'end' )
-    {
+    {        
         $email->__set('para', $emails[$x]);
         $email->getEmailUser($login);
         $email->getNameUser($login);

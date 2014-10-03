@@ -124,7 +124,7 @@ $_SESSION['secao'] = $session;
                                                 <td><b style=\"color:#999;\">Login:</b></td><td><input type=\"text\" style=\"height:20px;width:100px;margin-right:5px;\" name=\"login\" id=\"login\" /></td>
                                                 <td><b style=\"color:#999;\">Senha:</b></td><td><input type=\"password\" style=\"height:20px;width:100px;margin-right:5px;\" name=\"senha\" id=\"passwd\" /></td>
                                                 <td><a id='loginUser' href=\"javascript:void(0);\" onClick=\"formLog.submit();\">Logar</a></td>
-                                                <td><a id='loginUser' href='javascript:void(0);' onClick=\"javascript:atualiza('orçar.php?session=$session', 'conteudo');\">Cadastre-se</a></td>
+                                                <td><a id='loginUser' href='javascript:void(0);' onClick=\"javascript:atualiza('orcar.php?session=$session', 'conteudo');\">Cadastre-se</a></td>
                                             </tr>
                                         </form>
                                     </table>";
@@ -152,8 +152,8 @@ $_SESSION['secao'] = $session;
                                     <li><a href=\"javascript:void(0);\" onclick=\"javascript:atualiza('home.php?session=$session', 'conteudo');\"><span>Home</span></a>					  
                                     </li>
                                     <li><a href=\"javascript:void(0);\" onclick=\"javascript:atualiza('categorias.php?session=$session', 'conteudo');\"><span>Carrocerias</span></a></li>
-                                    <li><a href=\"javascript:void(0);\" onclick=\"javascript:atualiza('serviços.php?session=$session', 'conteudo');\"><span>Nossos serviços</span></a></li>
-                                    <li><a id='orc' href=\"javascript:void(0);\" onclick=\"javascript:atualiza('orçar.php?session=$session', 'conteudo');\"><span>Orçamentos</span></a></li>
+                                    <li><a href=\"javascript:void(0);\" onclick=\"javascript:atualiza('servicos.php?session=$session', 'conteudo');\"><span>Nossos serviços</span></a></li>
+                                    <li><a id='orc' href=\"javascript:void(0);\" onclick=\"javascript:atualiza('orcar.php?session=$session', 'conteudo');\"><span>Orçamentos</span></a></li>
                                     <li class=\"last\"><a href=\"contato.php\" id=\"formcontato\" class=\"highslide\" onclick=\"return hs.htmlExpand( this, {
                                     objectType: 'iframe', headingText: 'Contato', outlineType: 'rounded-white', wrapperClassName: 'titlebar',
                                     outlineWhileAnimating: true, preserveContent: false, width: 500, height:550 } )\"><p style='margin-top:6px;width:65px;margin-right:10px !important;'>Contato</p></a></li>                                ";
