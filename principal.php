@@ -3,22 +3,7 @@ include('classes/session.php');
 include('classes/config.php');
 include('classes/users.php');
 
-$session = $_GET['session'];
-
-if( $session == null )
-{
-    $userSession = new session();
-    $session = $userSession->__get('session');
-    session_start($session);
-}
-
-if ( $_REQUEST['action'] == 'logout' )
-{
-    session_destroy('secao');
-}
-
-$_SESSION['secao'] = $session;
-
+session_start();
 ?>
 <html>
     <head>
@@ -81,58 +66,58 @@ $_SESSION['secao'] = $session;
                     <div class='data' align="left">
                         <?php
                         include("classes/data.php");
+                        
                         $d = new data();
                         echo $d->getDataCompleta();
 
                         $config = new config();
+                        $user   = new users();
+                        
+                        $login = $_REQUEST['login'];
+                        $senha = $_REQUEST['senha'];
 
-                        $logado = true;
-
-                        if( $session != null )
+                        if( strlen($login) > 0 )
                         {
-                            $login = $_REQUEST['login'];
-                            $senha = $_REQUEST['senha'];
-                            $user = new users();
-
-                            if( isset($login) )
+                            if( $user->loginUser($login, $senha) )
                             {
-                                if( $user->loginUser($login, $senha) )
-                                {
-                                    $_SESSION['login'] = $login;
-                                    $logado = true;
-                                    echo "<script>window.history.replaceState('', '', 'principal.php' );</script>";
-                                }
-                                else
-                                {
-                                    $logado = false;                                
-                                }
-                            }
-
-                            if( (isset($_SESSION['login'])) && ($user->loginUserLog($_SESSION['login'])) )
-                            {
-                                $nome = $user->getNameUserByLogin($_SESSION['login']);
-
-                                echo "<table width=\"auto\" style=\"float:right;font-family:'Trebuchet MS', Arial;font-size:11px;\">
-                                        <form id='formLog' name='formLog'>
-                                            <tr>
-                                                <td><b style=\"color:#999;float:right;\">Olá</b></td><td><b style='color:blue;'>{$nome[0]}</b><b style=\"color:#999;\"> !</b></td><td><a id='loginUser' href='javascript:void(0);' onClick=\"window.location.href=window.location.href+'?action=logout'\">Logout</a></td>
-                                            </tr>
-                                        </form>
-                                    </table>";
+                                $_SESSION['login'] = $login;
+                                echo "<script>window.history.replaceState('', '', 'principal.php' );</script>";
                             }
                             else
                             {
-                                echo "<table width=\"auto\" style=\"float:right;font-family:'Trebuchet MS', Arial;font-size:11px;\">
-                                        <form id='formLog' name='formLog' method='post'>
-                                            <tr>
-                                                <td><b style=\"color:#999;\">Login:</b></td><td><input type=\"text\" style=\"height:20px;width:100px;margin-right:5px;\" name=\"login\" id=\"login\" /></td>
-                                                <td><b style=\"color:#999;\">Senha:</b></td><td><input type=\"password\" style=\"height:20px;width:100px;margin-right:5px;\" name=\"senha\" id=\"passwd\" /></td>
-                                                <td><a id='loginUser' href=\"javascript:void(0);\" onClick=\"formLog.submit();\">Logar</a></td>
-                                                <td><a id='loginUser' href='javascript:void(0);' onClick=\"javascript:atualiza('orcar.php?session=$session', 'conteudo');\">Cadastre-se</a></td>
-                                            </tr>
-                                        </form>
-                                    </table>";
+                                echo "<script>alert('Login ou senha inválida!');</script>";                            
                             }
+                        }
+                        
+                        if ( $_REQUEST['action'] == 'logout' )
+                        {
+                            $_SESSION['login'] = null;
+                        }
+
+                        if( (isset($_SESSION['login'])) && ($user->loginUserLog($_SESSION['login'])) )
+                        {
+                            $nome = $user->getNameUserByLogin($_SESSION['login']);
+
+                            echo "<table width=\"auto\" style=\"float:right;font-family:'Trebuchet MS', Arial;font-size:11px;\">
+                                    <form id='formLog' name='formLog'>
+                                        <tr>
+                                            <td><b style=\"color:#999;float:right;\">Olá</b></td><td><b style='color:blue;'>{$nome[0]}</b><b style=\"color:#999;\"> !</b></td><td><a id='loginUser' href='javascript:void(0);' onClick=\"window.location.href=window.location.href+'?action=logout'\">Logout</a></td>
+                                        </tr>
+                                    </form>
+                                </table>";
+                        }
+                        else
+                        {
+                            echo "<table width=\"auto\" style=\"float:right;font-family:'Trebuchet MS', Arial;font-size:11px;\">
+                                    <form id='formLog' name='formLog' method='post'>
+                                        <tr>
+                                            <td><b style=\"color:#999;\">Login:</b></td><td><input type=\"text\" style=\"height:20px;width:100px;margin-right:5px;\" name=\"login\" id=\"login\" /></td>
+                                            <td><b style=\"color:#999;\">Senha:</b></td><td><input type=\"password\" style=\"height:20px;width:100px;margin-right:5px;\" name=\"senha\" id=\"passwd\" /></td>
+                                            <td><a id='loginUser' href=\"javascript:void(0);\" onClick=\"formLog.submit();\">Logar</a></td>
+                                            <td><a id='loginUser' href='javascript:void(0);' onClick=\"javascript:atualiza('orcar.php?session=$session', 'conteudo');\">Cadastre-se</a></td>
+                                        </tr>
+                                    </form>
+                                </table>";
                         }
                         ?>                
                     </div>            
@@ -233,12 +218,6 @@ $_SESSION['secao'] = $session;
                     </div>
                 </div>				
             </div>
-            <?php
-            if( !$logado )
-            {
-                echo "<script>alert('Login ou senha inválida!');</script>";
-            }        
-            ?>
         </div>
     </body>
 </html>

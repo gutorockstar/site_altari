@@ -181,14 +181,8 @@ class users
         $busca = mysql_query($sql)or die(mysql_error());
         $result = mysql_fetch_array($busca);
         
-        if( $result[0] != null )
-        {            
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        
+        return ($result[0] != null);
         
         /**
          * Verifica na base se existe o login recebido

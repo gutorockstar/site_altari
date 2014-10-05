@@ -1,25 +1,13 @@
-<?php
-include('classes/config.php');
-include('gerenciadoradmin/classes/servico.php');
-include('classes/home.php');
-
-$config = new config();
-
-$session = $_GET['session'];
-
-if( $session != null )
-{
-    session_start($session);
-    $login = $_SESSION['login'];
-}
-
-?>
-
 <div id="fora">
     <b id="b" style="margin-right: 750px;">Serviços</b>
     <div class='servicos' align="center">
         <div id="serv">
             <?php
+            include('classes/config.php');
+            include('gerenciadoradmin/classes/servico.php');
+            include('classes/home.php');
+            
+            session_start();
 
             $config = new config();
 

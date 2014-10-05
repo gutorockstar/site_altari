@@ -1,23 +1,17 @@
-<?php
-    $session = $_GET['session'];
-	if( $session != null )
-	{
-		session_start($session);
-	}	
-?>
-
 <script type="text/javascript" src="js/validateFunctions.js"></script>
 
 <?php
     include('classes/config.php');
     include('classes/users.php');
     
+    session_start();
+    
     $conf    = new config();       
     
     $action  = $_GET['action'];
     $idProd  = $_GET['idProd'];
 
-    if( $session != null )
+    if ( strlen($_SESSION['login']) > 0 )
     {
         $log = $_SESSION['login'];
         
