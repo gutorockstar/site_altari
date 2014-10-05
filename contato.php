@@ -12,10 +12,10 @@
                     <td><br>Nome:<b class="required">*</b></td><td><br><input type="text" id="text" name="nome"/></td>
                 </tr>
                 <tr>
-                    <td>E-mail:<b class="required">*</b></td><td><input type="text" id="email" name="email" onBlur="emailValidation(this.value);" /></td>
+                    <td>E-mail:<b class="required">*</b></td><td><input type="text" id="email" name="email" onBlur="ValidaEmail(this);" /></td>
                 </tr>
                 <tr>
-                    <td>Fone:</td><td><input type="text" id="fone" name="fone"/></td>
+                    <td>Fone:</td><td><input type="text" id="fone" name="fone" onKeyPress="MascaraTelefone(this);" maxlength="14"  onBlur="ValidaTelefone(this);" /></td>
                 </tr>
                 <tr>
                     <td>Cidade:<b class="required">*</b></td><td><input type="text" class="text" id="cidade" name="cidade"/></td>
@@ -24,10 +24,10 @@
                     <td>Tipo de pessoa:<b class="required">*</b></td><td><input type="radio" id="tipoPessoa" name="tipoPessoa" value="f" onClick="verificaTipoPessoa(this.value)" checked/>Física &nbsp;<input type="radio" id="tipoPessoa" name="tipoPessoa" value="j" onClick="verificaTipoPessoa(this.value)"/>Jurídica</td>
                 </tr>
                 <tr>
-                    <td>CPF:<b class="required">*</b></td><td><input type="text" class="text" id="cpf" name="cpf"/></td>
+                    <td>CPF:<b class="required">*</b></td><td><input type="text" class="text" id="cpf" name="cpf" onBlur="ValidarCPF(this);" onKeyPress="MascaraCPF(this);" maxlength="14"/></td>
                 </tr>
                 <tr>
-                    <td>CNPJ:<b class="required">*</b></td><td><input type="text" class="textDisabled" id="cnpj" name="cnpj" disabled/></td>
+                    <td>CNPJ:<b class="required">*</b></td><td><input type="text" class="textDisabled" id="cnpj" name="cnpj" onKeyPress="MascaraCNPJ(this);" maxlength="18" onBlur="ValidarCNPJ(this);" disabled/></td>
                 </tr>
                 <tr>
                     <td>Mensagem:<b class="required">*</b></td><td><textarea id="descri" name="msg"></textarea></td>

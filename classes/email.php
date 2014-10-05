@@ -179,51 +179,19 @@ class email
     }
     
     function sendMail($para, $de, $mensagem, $assunto)
-    {               
-        var_dump($para);
-        var_dump($assunto);
-        var_dump($mensagem);
-        var_dump($this->prepareHeadersEmail($para, $de));
-        
-        $enviado = mail($para, $assunto, $mensagem, $this->prepareHeadersEmail($para, $de));
-        
-        if( $enviado )
-        {            
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
-    private function prepareHeadersEmail($to, $from)
     {
-        $bcc = null; // Esconder endereços de e-mails.
-        $cc = null; // Qualquer destinatário pode ver os endereços de e-mail especificados nos campos To e Cc.
-
-        $headers = sprintf( 'Date: %s%s', date( "D, d M Y H:i:s O" ), PHP_EOL );
-        $headers .= sprintf( 'Return-Path: %s%s', $from, PHP_EOL );
-        $headers .= sprintf( 'To: %s%s', $to, PHP_EOL );
-        $headers .= sprintf( 'Cc: %s%s', $cc, PHP_EOL );
-        $headers .= sprintf( 'Bcc: %s%s', $bcc, PHP_EOL );
-        $headers .= sprintf( 'From: %s%s', $from, PHP_EOL );
-        $headers .= sprintf( 'Reply-To: %s%s', $from, PHP_EOL );
-        $headers .= sprintf( 'Message-ID: <%s@%s>%s', md5( uniqid( rand( ), true ) ), $_SERVER[ 'HTTP_HOST' ], PHP_EOL );
-        $headers .= sprintf( 'X-Priority: %d%s', 3, PHP_EOL );
-        $headers .= sprintf( 'X-Mailer: PHP/%s%s', phpversion( ), PHP_EOL );
-        $headers .= sprintf( 'Disposition-Notification-To: %s%s', $from, PHP_EOL );
-        $headers .= sprintf( 'MIME-Version: 1.0%s', PHP_EOL );
-        $headers .= sprintf( 'Content-Transfer-Encoding: 8bit%s', PHP_EOL );
-        $headers .= sprintf( 'Content-Type: text/html; charset="utf-8"%s', PHP_EOL );
-
-        return $headers;
+        $headers = "MIME-Version: 1.1\n";
+        $headers .= "Content-type: text/plain; charset=utf-8\n";
+        $headers .= "From: $de\n";
+        $headers .= "Return-Path: $de\n";
+        $headers .= "Reply-To: $de\n";
+        
+        return mail($para, $assunto, $mensagem, $headers, "-f{$de}");
     }
     
     public function salvarOrcamento($data='', $nomeUser='', $de='', $fone='', $mensagem='')
     {
         include('data.php');
-        include('users.php');
         
         $de       = $this->__get('de'); //Email
         $mensagem = $this->__get('mensagem'); //Mensagem
