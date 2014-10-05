@@ -69,7 +69,7 @@ if( $editar == 'true' )
             <form <?php if($editar!='true'){echo"action='FrmNoticias.php?salvar=true'";}else{echo"action='FrmNoticias.php?salvar=true&update=true&idNot=$nId'";}?> method="post">
                 <table width="350px" style="font:14px 'Arial';">
                     <tr>
-                        <td>Título: <b id="obrigatory">*</b></td><td><input type="text" name="nTitulo" id="text" <?php if($editar=='true'){echo"value='$nTitulo'";}?>></td>
+                        <td>Título: <b id="obrigatory">*</b></td><td><input class="inputGerenciador" type="text" name="nTitulo" id="text" <?php if($editar=='true'){echo"value='$nTitulo'";}?>></td>
                     </tr>
                     <tr>
                         <td>Data inicial: <b id="obrigatory">*</b></td><td><input type="text" name="startDate" id="f_date_c1" <?php if($editar=='true'){echo"value='$nStartDate'";}?> readonly="1" /><img src="../imagens/calendario.png" id="f_trigger_c1" style="cursor:pointer;"  width="19px" height="19px" title="Selecionar data inicial" onmouseover="this.style.background='#4682B4';" onmouseout="this.style.background=''" /></td>

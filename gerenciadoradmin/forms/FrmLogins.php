@@ -69,19 +69,19 @@ else if( $action == 'delete' )
             <table width="400px" align="left" style="font:14px 'Arial';margin-left:20px;">
                 <form id="form" action="FrmLogins.php?action=insert" method="post">
                     <tr>
-                        <td>Nome:<b style="color:red;">*</b></td><td><input type='text' id='text' name='name' /></td>
+                        <td>Nome:<b style="color:red;">*</b></td><td><input class="inputGerenciador" type='text' id='text' name='name' /></td>
                     </tr>
                     <tr>
-                        <td>Email:<b style="color:red;">*</b></td><td><input type='text' id='email' name='email' onBlur="if(!$.validateEmail(document.getElementById('email').value)){alert('Email inválido');document.getElementById('email').value=null;} " /></td>
+                        <td>Email:<b style="color:red;">*</b></td><td><input class="inputGerenciador" type='text' id='email' name='email' onBlur="if(!$.validateEmail(document.getElementById('email').value)){alert('Email inválido');document.getElementById('email').value=null;} " /></td>
                     </tr>
                     <tr>
-                        <td>Fone:</td><td><input type='text' id='fone' name='fone' /></td>
+                        <td>Fone:</td><td><input class="inputGerenciador" type='text' id='fone' name='fone' /></td>
                     </tr>
                     <tr>
-                        <td>Login:<b style="color:red;">*</b></td><td><input type='login' id='login' name='login' /></td>
+                        <td>Login:<b style="color:red;">*</b></td><td><input class="inputGerenciador" type='login' id='login' name='login' /></td>
                     </tr>
                     <tr>
-                        <td>Senha:<b style="color:red;">*</b></td><td><input type='password' id='senha' name='senha' /></td>
+                        <td>Senha:<b style="color:red;">*</b></td><td><input class="inputGerenciador" type='password' id='senha' name='senha' /></td>
                     </tr>
                     <tr>
                         <td><br><input type="submit" id="logar" value="Salvar"/>&nbsp;&nbsp;<input type="reset" id="cancel" value="Limpar"/></td><td></td>

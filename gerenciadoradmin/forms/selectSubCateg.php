@@ -7,7 +7,7 @@ $editar = $_GET['editar'];
 
 
 
-<select name="subcateg" id="subcateg" <?php if(($action!='selected')||($idCat=='null')){echo"disabled='true' style='border:2px solid #999;width: 235px;height: 22px;-moz-border-radius:50px;border-radius:50px;'";}?> >
+<select name="subcateg" id="subcateg" <?php if(($action!='selected')||($idCat=='null')){echo"disabled='true'";}?> >
     <?php
     include('../../classes/config.php');                                
     include('../classes/subCategoria.php');

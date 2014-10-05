@@ -36,7 +36,7 @@ if( ($logado == 'true') && ($_SESSION["adminLogin"] != null) )
                                                                                     <a href=\"javascript:void(0);\" onclick=\"javascript:atualiza('produtos.php', 'PRODUTOS');\"><img src='imagens/produtos.png' title='Produtos' width='50px' height='50px'></a>
                                                                             </div>
                                                                             <div class='menu'>
-                                                                                    <a href=\"javascript:void(0);\" onclick=\"javascript:atualiza('serviços.php', 'SERVIÇOS');\"><img src='imagens/serviços.png' title='Serviços' width='50px' height='50px'></a>
+                                                                                    <a href=\"javascript:void(0);\" onclick=\"javascript:atualiza('servicos.php', 'SERVIÇOS');\"><img src='imagens/serviços.png' title='Serviços' width='50px' height='50px'></a>
                                                                             </div>
                                                                             <div class='menu'>
                                                                                     <a href=\"javascript:void(0);\" onclick=\"javascript:atualiza('orcamentos.php', 'CONTATOS');\"><img src='imagens/contato.png' title='Contatos' width='50px' height='50px'></a>

@@ -62,7 +62,7 @@ if( $action == 'popula')
             <table width="400px" align="left" style="font:14px 'Arial';margin-left:20px;">
                 <form <?php if($action=='popula'){echo"action='FrmSubGrupos.php?action=enter&up=true&id=$item'";}else{echo"action='FrmSubGrupos.php?action=enter&up=false'";}?> method="post" enctype="multipart/form-data">
                     <tr>
-                        <td>Selecionar grupo: <b style="color:red;">*</b></td><td><select name="checkCategorias" id="checkCategorias"<?php if($action!='popula'){echo"onchange=\"atualizarCampos('checkCategorias', 'FrmSubGrupos.php')\"";} ?>>
+                        <td>Selecionar grupo: <b style="color:red;">*</b></td><td><select class="inputGerenciador" name="checkCategorias" id="checkCategorias"<?php if($action!='popula'){echo"onchange=\"atualizarCampos('checkCategorias', 'FrmSubGrupos.php')\"";} ?>>
                                 <?php
                                 $sub = new subCategoria();
                                 if( $action == 'popula' )
@@ -106,13 +106,13 @@ if( $action == 'popula')
                         </td>
                     </tr>
                     <tr>
-                        <td <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"style='color:#999;'";}?>>Título do subgrupo: <b id="obrigatory">*</b></td><td><input type="text" <?php if($action=='popula'){echo"value='$subcatTitulo'";}?> id="text" name="text" <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"disabled='true'";}?>/></td>
+                        <td <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"style='color:#999;'";}?>>Título do subgrupo: <b id="obrigatory">*</b></td><td><input type="text" <?php if($action=='popula'){echo"value='$subcatTitulo'";}?> id="text" name="text" <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"disabled='true'";}else{echo"class='inputGerenciador'";}?>/></td>
                     </tr>
                     <tr>
-                        <td <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"style='color:#999;'";}?>>Imagem de chamada:</td><td><input type="button" id="procurar" onClick="fileOculto.click()" value="Procurar" <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"disabled='true'";}?>>&nbsp;<input type="text" <?php if($action=='popula'){echo"value='$subcatDirImagem'";}?> id="file" size="20" disabled /></td>
+                        <td <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"style='color:#999;'";}?>>Imagem de chamada:</td><td><input type="button" id="procurar" onClick="fileOculto.click()" value="Procurar" <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"disabled='true'";}else{echo"class='inputGerenciador'";}?>>&nbsp;<input type="text" <?php if($action=='popula'){echo"value='$subcatDirImagem'";}?> id="file" size="20" disabled /></td>
                     </tr>
                     <tr>
-                        <td <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"style='color:#999;'";}?>>Descrição:</td><td><textarea id="descri" name="descri" <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"disabled='true'";}?>><?php if($action=='popula'){echo "$subcatDescri";}?></textarea></td>
+                        <td <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"style='color:#999;'";}?>>Descrição:</td><td><textarea id="descri" name="descri" <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"disabled='true'";}else{echo"class='inputGerenciador'";}?>><?php if($action=='popula'){echo "$subcatDescri";}?></textarea></td>
                     </tr>
                     <tr>
                         <td <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"style='color:#999;'";}?>>Status:</td><td><input type="checkbox" <?php if($action=='popula'){if($subcatStatus=='ativo'){echo"checked";}else{echo"status.click()";}}else{echo"checked";}?> name="status" id="status" <?php if((($action!='selected')&&($action != 'popula'))||($item=='null')){echo"disabled='true'";}?>>ativo</td>

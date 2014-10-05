@@ -2,6 +2,10 @@
     width: 100px;
 }
 
+.inputGerenciador{
+    background: #fff !important;
+}
+
 #login{
     border: 1px solid #4682B4;
     width: 135px;
@@ -9,7 +13,7 @@
     text-align: center;
     
     background:#eee;
-    
+    border-radius: 4px;
     
 }
 
@@ -34,7 +38,7 @@
     text-align: center;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
-    
+    border-radius: 4px;
     background:#eee;
 }
 
@@ -60,7 +64,7 @@
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
     background:#eee;
-    
+    border-radius: 4px;
 }
 
 #login1:hover{
@@ -85,7 +89,7 @@
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
     background:#eee;
-    
+    border-radius: 4px;
 }
 
 #passwd:hover{
@@ -109,7 +113,7 @@
     text-align: center;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
-    
+    border-radius: 4px;
     background:#eee;
 }
 
@@ -134,7 +138,7 @@
     text-align: center;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
-    
+    border-radius: 4px;
     background:#eee;
 }
 
@@ -195,7 +199,7 @@
     height: 22px;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
-    
+    border-radius: 4px;
     
     background:#eee;
 }
@@ -206,7 +210,7 @@
     height: 22px;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
-    
+    border-radius: 4px;
     
     background:#ddd;
 }
@@ -217,7 +221,7 @@
     height: 22px;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
-    
+    border-radius: 4px;
     
     background:#eee;
 }
@@ -257,7 +261,7 @@
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
     
-    
+    border-radius: 4px;
     background:#eee;
 }
 
@@ -281,7 +285,7 @@
     height: 22px;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
-    
+    border-radius: 4px;
     
     background:#eee;
 }
@@ -313,7 +317,8 @@
     width: 161px;
     height: 22px;
      /*esse serve o firefox*/
-    
+    border-radius: 4px;
+    border: 1px solid #4682B4;
 }
 
 #procurar{
@@ -337,6 +342,7 @@
     width: 235px;
     height: 150px;
     background:#eee;
+    border-radius: 4px;
 }
 
 #descri:hover{
@@ -354,6 +360,7 @@
     background: #fff;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/    
+     border-radius: 4px;
 }
 
 #checkCategorias:hover{
@@ -371,6 +378,7 @@
     background: #fff;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/    
+     border-radius: 4px;
 }
 
 #categ:hover{
@@ -387,7 +395,8 @@
     height: 22px;
     background: #fff;
      /*esse serve o firefox*/
-     /*esse para chrome, safari, opera*/    
+     /*esse para chrome, safari, opera*/   
+     border-radius: 4px;
 }
 
 #subcateg:hover{
@@ -416,6 +425,7 @@
     height: 22px;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
+     border-radius: 4px;
 }
 
 #emailPara:hover{
@@ -432,6 +442,7 @@
     height: 22px;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
+     border-radius: 4px;
 }
 
 #cc:hover{
@@ -448,6 +459,7 @@
     height: 22px;
      /*esse serve o firefox*/
      /*esse para chrome, safari, opera*/
+     border-radius: 4px;
 }
 
 #assunto:hover{
@@ -461,13 +473,11 @@
 #f_date_c1{
     border: 1px solid #4682B4;
     height: 22px;
-     /*esse serve o firefox*/
-     /*esse para chrome, safari, opera*/
+    border-radius: 4px;
 }
 
 #f_date_c2{
     border: 1px solid #4682B4;
     height: 22px;
-     /*esse serve o firefox*/
-     /*esse para chrome, safari, opera*/
+    border-radius: 4px;
 }

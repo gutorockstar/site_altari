@@ -70,7 +70,7 @@ if( $editar == 'true' )
             <form <?php if($editar!='true'){echo"action='FrmServiços.php?salvar=true'";}else{echo"action='FrmServiços.php?salvar=true&update=true&idServ=$idServ'";}?> method="post">
                 <table width="350px" style="font:14px 'Arial';">                    
                     <tr>
-                        <td>Título: <b id="obrigatory">*</b></td><td><input type="text" name="text" id="text" <?php if($editar=='true'){echo"value='$sTitulo'";}?>></td>
+                        <td>Título: <b id="obrigatory">*</b></td><td><input class="inputGerenciador" type="text" name="text" id="text" <?php if($editar=='true'){echo"value='$sTitulo'";}?>></td>
                     </tr>
                     <tr>
                         <td>Status:</td><td><input type="checkbox" <?php if($editar=='true'){if($sStatus=='ativo'){echo"checked";}else{echo"status.click()";}}else{echo"checked";}?> name="status" id="status">ativo</td>

@@ -18,17 +18,17 @@
                             <tr></tr>
                             <tr></tr>
                             <tr>
-                                <td>Login</td><td><input type="text" name="login" id="login"/></td>
+                                <td>Login: </td><td><input type="text" name="login" id="login"/></td>
                             </tr>
                             <tr></tr>
                             <tr></tr>
                             <tr>
-                                <td>Senha</td><td><input type="password" name="passwd" id="passwd"/></td>
+                                <td>Senha: </td><td><input type="password" name="passwd" id="passwd"/></td>
                             </tr>
                             <tr></tr>
                             <tr></tr>
                             <tr>
-                                <td></td><td><input type="submit" name="logar" id="logar" value='Logar'/><input type="reset" name="cancel" id="cancel" value='Cancelar'/></td>
+                                <td></td><td><input type="submit" name="logar" id="logar" value='Logar'/>&nbsp;&nbsp;<input type="reset" name="cancel" id="cancel" value='Cancelar'/></td>
                             </tr>
                             <tr></tr>
                             <tr></tr>

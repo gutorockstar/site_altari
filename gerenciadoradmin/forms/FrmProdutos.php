@@ -128,7 +128,7 @@ if( $editar == 'true' )
                         <td>Subcategoria:</td><td><div id="select"></div></td>
                     </tr>
                     <tr>
-                        <td>Título: <b id="obrigatory">*</b></td><td><input type="text" name="text" id="text" <?php if($editar=='true'){echo"value='$pTitulo'";}?>></td>
+                        <td>Título: <b id="obrigatory">*</b></td><td><input type="text" class="inputGerenciador" name="text" id="text" <?php if($editar=='true'){echo"value='$pTitulo'";}?>></td>
                     </tr>
                     <tr>
                         <td>Status:</td><td><input type="checkbox" <?php if($editar=='true'){if($pStatus=='ativo'){echo"checked";}else{echo"status.click()";}}else{echo"checked";}?> name="status" id="status">ativo</td>

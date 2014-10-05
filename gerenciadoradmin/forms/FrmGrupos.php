@@ -42,13 +42,13 @@
             <table width="400px" align="left" style="font:14px 'Arial';margin-left:20px;">
                 <form <?php if($ac=='popula'){echo"action='FrmGrupos.php?action=enter&up=true&id=$id'";}else{echo"action='FrmGrupos.php?action=enter&up=false'";}?>method="post" enctype="multipart/form-data">                    
                     <tr>
-                        <td>Título do grupo: <b style="color:red;">*</b></td><td><input type="text"<?php if($ac=='popula'){echo"value='$catTitulo'";}?> id="text" name="text"/></td>
+                        <td>Título do grupo: <b style="color:red;">*</b></td><td><input class="inputGerenciador" type="text"<?php if($ac=='popula'){echo"value='$catTitulo'";}?> id="text" name="text"/></td>
                     </tr>
                     <tr>
                         <td>Imagem de chamada:</td><td><input type="button" id="procurar" onClick="fileOculto.click()" value="Procurar">&nbsp;<input type="text" <?php if($ac=='popula'){echo"value='$catDirImagem'";}?> id="file" size="20" disabled /></td>
                     </tr>
                     <tr>
-                        <td>Descrição:</td><td><textarea id="descri" name="descri"><?php if($ac=='popula'){echo"$catDescri";}else{}?></textarea></td>
+                        <td>Descrição:</td><td><textarea id="descri" class="inputGerenciador" name="descri"><?php if($ac=='popula'){echo"$catDescri";}else{}?></textarea></td>
                     </tr>
                     <tr>
                         <td>Status:</td><td><input type="checkbox" <?php if($ac=='popula'){if($catStatus=='ativo'){echo"checked";}else{echo"status.click()";}}else{echo"checked";}?>  name="status" id="status">ativo
