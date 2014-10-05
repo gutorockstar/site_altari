@@ -63,7 +63,7 @@ if( $action == 'enviar' )
         {
             $email->salvarOrcamento();
             $user->deleteAllProd($login);        
-            echo "<script>alert('Orçamento enviado com sucesso, retornaremos em breve');</script>";
+            echo '<script>alert("Orçamento enviado com sucesso, retornaremos em breve");</script>';
         }
         else
         {
@@ -74,6 +74,8 @@ if( $action == 'enviar' )
     {
         echo "<script>alert('{$err->getMessage()}');</script>";
     }
+    
+    echo '<script>$(document).ready(function(){$("#obscure-loading").fadeOut("slow");});</script>';
     
 }
 

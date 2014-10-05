@@ -59,7 +59,18 @@ session_start();
         <script type="text/javascript" src="js/validateFunctions.js"></script>
     </head>
     
-    <body align='center' width='900px;'>
+    <div id='obscure-loading'>
+        <div class='contentBar'>
+            <div align="center" class="msgLoad"><b>Aguarde...</b></div>
+            <div id='block_1' class='barlittle'></div>
+            <div id='block_2' class='barlittle'></div>
+            <div id='block_3' class='barlittle'></div>
+            <div id='block_4' class='barlittle'></div>
+            <div id='block_5' class='barlittle'></div>
+        </div>
+    </div>
+    
+    <body align='center' width='900px;'>   
         <div id="principal">
             <div style="background: #fff;">
                 <div class="bordaBox">                

@@ -147,11 +147,11 @@
                 </div>
             </div>
             <div style="display:block;">
-                <div id="orçar">
+                <div id="orcar">
                     <?php
                     if( $l )
                     {
-                        echo "<a style='text-decoration:none;font-size:13px;font-weight:bold;color:#fff;' href=\"javascript:void(0);\" onclick=\"javascript:atualiza('orçar.php?idProd=$idProd&action=insert', 'conteudo');\" title='Adicionar à lista de orçamentos'><img src='gerenciadoradmin/imagens/prancheta.png' width='20px' height='20px'>&nbsp;&nbsp;&nbsp;&nbsp;<b>Adicionar à lista de orçamentos</b></a>";
+                        echo "<a style='text-decoration:none;font-size:13px;font-weight:bold;color:#fff;' href=\"javascript:void(0);\" onclick=\"javascript:atualiza('orcar.php?idProd=$idProd&action=insert', 'conteudo');\" title='Adicionar à lista de orçamentos'><img src='gerenciadoradmin/imagens/prancheta.png' width='20px' height='20px'>&nbsp;&nbsp;&nbsp;&nbsp;<b>Adicionar à lista de orçamentos</b></a>";
                     }
                     else
                     {

@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="css/corpo.css" type="text/css" media="screen" />
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/validateFunctions.js"></script>
+<script type="text/javascript" src="js/atualiza.js"></script>
 
 <body style="background: #B2CBFF;font-family:'Trebuchet MS', Arial;font-size: 11px;">
     <p align="center" style='font-weight: bold;'>Mande-nos sua pergunta, elogios, conselhos ou críticas:</p>
@@ -52,6 +53,8 @@ $action = $_GET['action'];
 
 if( $action == 'enviar' )
 {
+    echo '<script>$(document).ready(function(){$("#obscure-loading").fadeIn("slow");});</script>';
+    
     try
     {
         $config = new config();
@@ -98,5 +101,7 @@ if( $action == 'enviar' )
     {
         echo "<script>alert('{$err->getMessage()}');</script>";
     }
+    
+    echo '<script>$(document).ready(function(){$("#obscure-loading").fadeOut("slow");});</script>';
 }
 ?>

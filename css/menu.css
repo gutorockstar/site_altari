@@ -3,7 +3,10 @@
     position:relative;
     height:32px;
 }
-#menu .menu { position:absolute; }
+#menu .menu { 
+    position:absolute; 
+}
+
 #menu * {
     list-style:none;
     border:0;
@@ -164,11 +167,11 @@
 }
 
 #menu.active a {
-    z-index:780;
+    z-index:80;
     position:relative;
 }
-#menu.active li { z-index:778; }
-#menu.active div div { z-index:781; }
+#menu.active li { z-index:78; }
+#menu.active div div { z-index:81; }
 #menu.active div a { position:static; }
 
 #menu.active li.back {
