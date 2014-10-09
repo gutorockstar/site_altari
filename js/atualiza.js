@@ -50,7 +50,7 @@ function atualiza(link, div)
         }
     });
     
-    if ( link != 'home.php' && link != 'novidades.php' && link != 'orcar.php?session=' && enviando < 0 )
+    if ( link != 'home.php' && link != 'novidades.php' && enviando < 0 )
     {
         // off loading
         $(document).ready(function(){$('#obscure-loading').fadeOut("slow");});
