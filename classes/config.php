@@ -29,8 +29,8 @@ class config {
         else
         {
             $this->__set('dbhost', 'localhost');
-            $this->__set('dbuser', 'root');
-            $this->__set('dbpsswd', 'root');
+            $this->__set('dbuser', 'altari_dbuser');
+            $this->__set('dbpsswd', '73cn0n_altar1');
             $this->__set('dbname', 'altari_database');
             
             $this->conectarDB();
