@@ -3,6 +3,10 @@
     <div class='servicos' align="center">
         <div id="serv">
             <?php
+	    ini_set('display_errors', 'Off');
+	    ini_set('display_startup_errors', 'Off');
+	    error_reporting(0);
+
             include('classes/config.php');
             include('gerenciadoradmin/classes/servico.php');
             include('classes/home.php');

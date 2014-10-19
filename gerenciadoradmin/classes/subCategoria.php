@@ -10,6 +10,10 @@
  *
  * @author augusto
  */
+ini_set('display_errors', 'Off');
+ini_set('display_startup_errors', 'Off');
+error_reporting(0);
+
 include('categoria.php');
 
 class subCategoria extends categoria

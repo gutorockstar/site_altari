@@ -1,6 +1,10 @@
 <script type="text/javascript" src="js/validateFunctions.js"></script>
 
 <?php
+    ini_set('display_errors', 'Off');
+    ini_set('display_startup_errors', 'Off');
+    error_reporting(0);
+
     include('classes/config.php');
     include('classes/users.php');
     
