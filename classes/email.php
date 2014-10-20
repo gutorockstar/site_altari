@@ -181,7 +181,7 @@ class email
     function sendMail($para, $de, $mensagem, $assunto)
     {
         $headers = "MIME-Version: 1.1\n";
-        $headers .= "Content-type: text/plain; charset=utf-8\n";
+        $headers .= "Content-type: text/html; charset=utf-8\n";
         $headers .= "From: $de\n";
         $headers .= "Return-Path: $de\n";
         $headers .= "Reply-To: $de\n";
