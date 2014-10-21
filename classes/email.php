@@ -12,6 +12,8 @@
  */
 class email 
 {
+    const INFO_EMAIL = 'info@altari.com.br';
+
     /**
      * To
      * 
@@ -180,11 +182,12 @@ class email
     
     function sendMail($para, $de, $mensagem, $assunto)
     {
-        $headers = "MIME-Version: 1.1\n";
-        $headers .= "Content-type: text/html; charset=utf-8\n";
-        $headers .= "From: $de\n";
-        $headers .= "Return-Path: $de\n";
-        $headers .= "Reply-To: $de\n";
+	$de = self::INFO_EMAIL;
+
+        $headers = "MIME-Version: 1.0\r\n";
+        $headers .= "From: Site Altari <$de>\r\n";
+        $headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
+	$headers .= "X-Mailer: PHP/" . phpversion ();
         
         return mail($para, $assunto, $mensagem, $headers, "-f{$de}");
     }
